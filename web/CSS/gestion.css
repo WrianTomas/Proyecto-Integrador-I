@@ -1,0 +1,121 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 21 may. 2026, 10:18:00 a. m.
+    Author     : david
+*/
+
+body {
+                font-family: 'Segoe UI', sans-serif;
+                background-color: #f4f7f9;
+                margin: 0;
+                padding: 40px;
+                color: #333;
+            }
+            .tarjeta {
+                background: white;
+                border-radius: 10px;
+                padding: 30px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+                margin-bottom: 30px;
+            }
+            .tarjeta-azul {
+                border-top: 4px solid #0d6efd;
+            }
+            .tarjeta-gris {
+                border-top: 4px solid #6c757d;
+            }
+            h2 {
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+            .h2-azul {
+                color: #0d6efd;
+            }
+
+            .formulario-zona {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+            }
+            .input-estandar {
+                flex: 1;
+                padding: 12px;
+                border: 1px solid #ced4da;
+                border-radius: 6px;
+                font-size: 14px;
+                outline: none;
+            }
+            .input-estandar:focus {
+                border-color: #0d6efd;
+            }
+            .btn-guardar {
+                background-color: #198754;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.2s;
+                white-space: nowrap;
+            }
+            .btn-guardar:hover {
+                background-color: #157347;
+            }
+
+            .tabla-estandar {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 15px;
+            }
+            .tabla-estandar th {
+                background-color: #f8f9fa;
+                padding: 15px;
+                text-align: left;
+                font-weight: 600;
+                color: #495057;
+                border-bottom: 2px solid #dee2e6;
+            }
+            .tabla-estandar td {
+                padding: 15px;
+                border-bottom: 1px solid #e9ecef;
+                vertical-align: middle;
+            }
+            .badge {
+                background-color: #e2e3e5;
+                color: #383d41;
+                padding: 6px 12px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            .btn-editar {
+                background-color: #ffc107;
+                color: #000;
+                border: none;
+                padding: 6px 15px;
+                border-radius: 4px;
+                font-weight: bold;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+            }
+            .btn-editar:hover {
+                background-color: #ffca2c;
+            }
+
+            .btn-volver {
+                display: inline-block;
+                margin-bottom: 20px;
+                color: #6c757d;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .btn-volver:hover {
+                color: #343a40;
+                text-decoration: underline;
+            }

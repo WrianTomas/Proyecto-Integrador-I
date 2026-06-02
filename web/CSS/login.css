@@ -1,0 +1,254 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 21 may. 2026, 10:18:15 a. m.
+    Author     : david
+*/
+
+* {
+                box-sizing: border-box;
+                font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background: linear-gradient(135deg, #1e52fd 0%, #0b3cb3 100%);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                padding: 20px;
+            }
+
+            /* Contenedor de Marca Superior */
+            .marca-contenedor {
+                text-align: center;
+                color: white;
+                margin-bottom: 24px;
+            }
+
+            .logo-app {
+                background: white;
+                width: 60px;
+                height: 60px;
+                border-radius: 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto 16px auto;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .logo-app svg {
+                width: 32px;
+                height: 32px;
+                fill: #1e52fd;
+            }
+
+            .marca-contenedor h1 {
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 6px;
+                letter-spacing: 0.5px;
+            }
+
+            .marca-contenedor p {
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .tarjeta-login {
+                background: white;
+                width: 100%;
+                max-width: 440px;
+                border-radius: 24px;
+                padding: 32px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            /* Selector de pestañas (Tabs) */
+            .contenedor-tabs {
+                display: flex;
+                background: #f1f3f7;
+                padding: 4px;
+                border-radius: 12px;
+                margin-bottom: 28px;
+            }
+
+            .tab-btn {
+                flex: 1;
+                border: none;
+                background: transparent;
+                padding: 10px;
+                font-size: 14px;
+                font-weight: 600;
+                color: #6c757d;
+                cursor: pointer;
+                border-radius: 8px;
+                transition: 0.2s;
+            }
+
+            .tab-btn.activo {
+                background: white;
+                color: #1e52fd;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            }
+
+            .grupo-campo {
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .grupo-campo label {
+                font-size: 13px;
+                font-weight: 600;
+                color: #333333;
+            }
+
+            .contenedor-input {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+
+            .contenedor-input svg {
+                position: absolute;
+                left: 14px;
+                width: 18px;
+                height: 18px;
+                fill: #999999;
+            }
+
+            .input-login {
+                width: 100%;
+                padding: 14px 14px 14px 42px;
+                border: 1px solid #dcdfe6;
+                border-radius: 12px;
+                font-size: 14px;
+                outline: none;
+                transition: 0.2s;
+                color: #333;
+            }
+
+            .input-login:focus {
+                border-color: #1e52fd;
+                box-shadow: 0 0 0 3px rgba(30, 82, 253, 0.15);
+            }
+
+            .olvido-contrasena {
+                display: block;
+                text-align: right;
+                font-size: 12px;
+                color: #1e52fd;
+                text-decoration: none;
+                font-weight: 600;
+                margin-top: -8px;
+                margin-bottom: 24px;
+            }
+
+            .olvido-contrasena:hover {
+                text-decoration: underline;
+            }
+
+            /* Botón Principal */
+            .btn-ingresar {
+                width: 100%;
+                background: #1e52fd;
+                color: white;
+                border: none;
+                padding: 14px;
+                border-radius: 12px;
+                font-size: 15px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.2s;
+                box-shadow: 0 4px 12px rgba(30, 82, 253, 0.2);
+            }
+
+            .btn-ingresar:hover {
+                background: #1646dd;
+            }
+
+            /* Divisor "O continúa con" */
+            .divisor-social {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: #909399;
+                font-size: 12px;
+                margin: 24px 0;
+            }
+
+            .divisor-social::before, .divisor-social::after {
+                content: '';
+                flex: 1;
+                border-bottom: 1px solid #e4e7ed;
+            }
+
+            .divisor-social:not(:empty)::before {
+                margin-right: .5em;
+            }
+            .divisor-social:not(:empty)::after {
+                margin-left: .5em;
+            }
+
+            /* Botones de Redes Sociales */
+            .grid-social {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .btn-social {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                background: white;
+                border: 1px solid #dcdfe6;
+                padding: 12px;
+                border-radius: 12px;
+                font-size: 14px;
+                font-weight: 600;
+                color: #444;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+
+            .btn-social:hover {
+                background: #f5f7fa;
+                border-color: #c0c4cc;
+            }
+
+            .btn-social img {
+                width: 18px;
+                height: 18px;
+            }
+
+            /* Enlaces Inferiores de Navegación */
+            .enlaces-inferiores {
+                margin-top: 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .enlace-footer {
+                color: rgba(255, 255, 255, 0.85);
+                font-size: 13px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: 0.2s;
+            }
+
+            .enlace-footer:hover {
+                color: white;
+                text-decoration: underline;
+            }
