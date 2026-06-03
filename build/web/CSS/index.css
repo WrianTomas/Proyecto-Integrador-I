@@ -1,0 +1,279 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 21 may. 2026, 10:18:07 a. m.
+    Author     : david
+*/
+
+* {
+                box-sizing: border-box;
+                font-family: 'Segoe UI', system-ui, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #f4f7fa;
+                color: #333;
+            }
+            .navbar {
+                background: white;
+                padding: 15px 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+            .logo {
+                font-size: 20px;
+                font-weight: bold;
+                color: #0d6efd;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .user-controls {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .btn-reportar {
+                background: #0d6efd;
+                color: white;
+                padding: 10px 24px;
+                border-radius: 20px;
+                font-weight: 600;
+                border: none;
+                cursor: pointer;
+                transition: 0.2s;
+                box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+            }
+            .btn-reportar:hover {
+                background: #0b5ed7;
+                transform: translateY(-2px);
+            }
+            .btn-salir {
+                background: transparent;
+                color: #dc3545;
+                border: 1px solid #dc3545;
+                padding: 8px 16px;
+                border-radius: 20px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: 0.2s;
+            }
+            .btn-salir:hover {
+                background: #dc3545;
+                color: white;
+            }
+            .stats-banner {
+                background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+                color: white;
+                padding: 30px 40px;
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .stat-card {
+                background: rgba(255,255,255,0.1);
+                border-radius: 12px;
+                padding: 20px;
+                flex: 1;
+                min-width: 200px;
+                max-width: 250px;
+                border: 1px solid rgba(255,255,255,0.2);
+                backdrop-filter: blur(10px);
+            }
+            .stat-valor {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            .stat-label {
+                font-size: 14px;
+                opacity: 0.9;
+            }
+            .contenedor-main {
+                padding: 40px;
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 30px;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+            .panel-mapa {
+                background: white;
+                border-radius: 16px;
+                padding: 20px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+                display: flex;
+                flex-direction: column;
+            }
+            .panel-header {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                align-items: center;
+            }
+            .panel-header h2 {
+                font-size: 18px;
+                color: #2c3e50;
+                margin: 0;
+            }
+            #mapaSantaClara {
+                width: 100%;
+                height: 550px;
+                border-radius: 12px;
+                z-index: 1;
+                flex-grow: 1;
+            }
+            .panel-lista {
+                background: white;
+                border-radius: 16px;
+                padding: 25px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+                max-height: 635px;
+                overflow-y: auto;
+            }
+            .panel-lista h3 {
+                font-size: 16px;
+                color: #2c3e50;
+                margin-top: 0;
+                margin-bottom: 20px;
+                position: sticky;
+                top: 0;
+                background: white;
+                padding-bottom: 10px;
+                z-index: 10;
+            }
+            .item-reporte {
+                background: #f8f9fa;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 15px;
+                border-left: 4px solid #6c757d;
+                transition: 0.2s;
+            }
+            .item-reporte:hover {
+                background: #f1f3f5;
+                transform: translateX(5px);
+            }
+            .item-titulo {
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 5px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .item-ubi {
+                font-size: 13px;
+                color: #777;
+                margin-bottom: 8px;
+            }
+            .badge {
+                padding: 4px 8px;
+                border-radius: 12px;
+                font-size: 11px;
+                font-weight: bold;
+                color: white;
+            }
+            .b-pendiente {
+                background: #6c757d;
+            }
+            .b-proceso {
+                background: #ffc107;
+                color: black;
+            }
+            .b-atendido {
+                background: #198754;
+            }
+            .modal-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0,0,0,0.5);
+                backdrop-filter: blur(5px);
+                z-index: 2000;
+                justify-content: center;
+                align-items: center;
+            }
+            .modal-content {
+                background: white;
+                padding: 30px;
+                border-radius: 16px;
+                width: 90%;
+                max-width: 450px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+                position: relative;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            .btn-cerrar-modal {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                font-size: 24px;
+                cursor: pointer;
+                color: #adb5bd;
+                border: none;
+                background: none;
+            }
+            .btn-cerrar-modal:hover {
+                color: #dc3545;
+            }
+            .grupo-formulario {
+                margin-bottom: 15px;
+            }
+            .grupo-formulario label {
+                display: block;
+                font-size: 13px;
+                font-weight: 600;
+                color: #495057;
+                margin-bottom: 5px;
+            }
+            .input-estandar {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ced4da;
+                border-radius: 8px;
+                font-size: 14px;
+                outline: none;
+            }
+            .input-estandar:focus {
+                border-color: #0d6efd;
+                box-shadow: 0 0 0 3px rgba(13,110,253,0.15);
+            }
+            .btn-principal {
+                width: 100%;
+                background: #198754;
+                color: white;
+                border: none;
+                padding: 14px;
+                border-radius: 8px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-top: 10px;
+                font-size: 15px;
+            }
+            .btn-principal:hover {
+                background: #157347;
+            }
+            .btn-calificar-sm {
+                background: #0d6efd;
+                color: white;
+                border: none;
+                padding: 6px 12px;
+                border-radius: 4px;
+                font-size: 11px;
+                cursor: pointer;
+                margin-top: 8px;
+                font-weight: bold;
+            }
