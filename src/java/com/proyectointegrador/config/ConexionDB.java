@@ -12,10 +12,9 @@ import java.sql.SQLException;
  */
 public class ConexionDB {
     
-    // EL TRUCO: Usar 127.0.0.1 en lugar de localhost para evitar bloqueos del puerto 3307
-    private static final String URL = "jdbc:mysql://127.0.0.1:3307/bd_incidencias_santaclara?useSSL=false&serverTimezone=UTC";
+    private static final String URL = "jdbc:mysql://localhost:3306/?user=root";
     private static final String USER = "root"; 
-    private static final String PASSWORD = ""; // Déjalo vacío si estás en XAMPP
+    private static final String PASSWORD = "";
 
     public static Connection conectar() {
         try {

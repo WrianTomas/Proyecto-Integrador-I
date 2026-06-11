@@ -36,11 +36,11 @@
         <div class="fila-2-cols">
             <div class="grupo-formulario">
                 <label>DNI</label>
-                <input type="text" class="input-estandar" name="dni" maxlength="8" required>
+                <input type="text" class="input-estandar" name="dni" maxlength="8" pattern="\d{8}" title="Debe contener exactamente 8 números" required>
             </div>
             <div class="grupo-formulario">
                 <label>Teléfono</label>
-                <input type="text" class="input-estandar" name="telefono">
+                <input type="tel" class="input-estandar" name="telefono" maxlength="15" pattern="[0-9]+" title="Solo ingrese números">
             </div>
         </div>
         
@@ -64,8 +64,14 @@
 <script>
     document.getElementById('formRegistro').addEventListener('submit', function(event) {
         event.preventDefault(); 
+        
         const formData = new URLSearchParams(new FormData(this));
         const alerta = document.getElementById('mensajeAlerta');
+        const btnSubmit = this.querySelector('button[type="submit"]'); // Capturamos el botón
+        
+        btnSubmit.disabled = true;
+        btnSubmit.textContent = "Procesando...";
+        btnSubmit.style.opacity = "0.7";
         
         fetch('/ProyectoIntegrador/api/registro', {
             method: 'POST',
@@ -84,13 +90,23 @@
                 alerta.style.backgroundColor = '#f8d7da';
                 alerta.style.color = '#dc3545';
                 alerta.textContent = datos.message;
+                restaurarBoton(btnSubmit);
             }
         })
         .catch(error => {
             alerta.classList.add('visible');
+            alerta.style.backgroundColor = '#f8d7da';
+            alerta.style.color = '#dc3545';
             alerta.textContent = "Error de conexión con el servidor.";
+            restaurarBoton(btnSubmit);
         });
     });
+
+    function restaurarBoton(btn) {
+        btn.disabled = false;
+        btn.textContent = "Registrarme";
+        btn.style.opacity = "1";
+    }
 </script>
 
 </body>
